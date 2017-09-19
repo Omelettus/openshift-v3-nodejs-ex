@@ -13,13 +13,19 @@ var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
     mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL,
     mongoURLLabel = "";
 
-if (mongoURL == null && process.env.DATABASE_SERVICE_NAME) {
-  var mongoServiceName = process.env.DATABASE_SERVICE_NAME.toUpperCase(),
-      mongoHost = process.env[mongoServiceName + '_SERVICE_HOST'],
-      mongoPort = process.env[mongoServiceName + '_SERVICE_PORT'],
-      mongoDatabase = process.env[mongoServiceName + '_DATABASE'],
-      mongoPassword = process.env[mongoServiceName + '_PASSWORD']
-      mongoUser = process.env[mongoServiceName + '_USER'];
+if (mongoURL == null) {
+//if (mongoURL == null && process.env.DATABASE_SERVICE_NAME) {
+  //var mongoServiceName = process.env.DATABASE_SERVICE_NAME.toUpperCase(),
+  var mongoHost = process.env.TREX_MONGO_SERVICE_HOST,
+      mongoPort = process.env.TREX_MONGO_SERVICE_PORT,
+	  mongoDatabase = process.env.MONGODB_DATABASE,
+      mongoPassword = process.env.MONGODB_PASSWORD,
+      mongoUser = process.env.MONGODB_USER;
+	  //mongoHost = process.env[mongoServiceName + '_SERVICE_HOST'],
+      //mongoPort = process.env[mongoServiceName + '_SERVICE_PORT'],
+      //mongoDatabase = process.env[mongoServiceName + '_DATABASE'],
+      //mongoPassword = process.env[mongoServiceName + '_PASSWORD']
+      //mongoUser = process.env[mongoServiceName + '_USER'];
 
   if (mongoHost && mongoPort && mongoDatabase) {
     mongoURLLabel = mongoURL = 'mongodb://';
