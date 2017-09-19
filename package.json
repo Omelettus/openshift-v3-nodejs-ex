@@ -1,34 +1,135 @@
 {
-  "name": "nodejs-ex",
-  "version": "0.0.1",
-  "description": "Node.js sample app for OpenShift 3",
-  "main": "server.js",
+  "name": "TRex",
+  "description": "Torrent Rex",
+  "version": "2.2.0",
+  "engines": {
+    "node": ">= 0.6.0",
+    "npm": ">= 1.0.0"
+  },
   "dependencies": {
-    "chai": "^3.5.0",
-    "chai-http": "^2.0.1",
-    "ejs": "^2.4.1",
-    "express": "^4.13.4",
-    "mocha": "^2.4.5",
-    "mongodb": "^2.1.16",
-    "morgan": "^1.7.0",
-    "object-assign":"4.1.0"
+    "async": "^0.9.0",
+    "atob": "^2.0.0",
+    "btoa": "^1.1.2",
+    "cheerio": "*",
+    "express": "^3.4.8",
+    "md5": "^2.0.0",
+    "mongoose": "^4.0.0",
+    "parse-torrent": "^5.4.0",
+    "prompt": "^0.2.14",
+    "q": "^1.2.0",
+    "readline-sync": "^1.2.19",
+    "request": "*",
+    "morgan": "^1.7.0"
   },
-  "engine": {
-    "node": "*",
-    "npm": "*"
-  },
+  "bundleDependencies": [],
+  "private": true,
+  "main": "app.js",
   "scripts": {
-    "start": "node server.js",
-    "test": "IP=0.0.0.0 PORT=3030 mocha --timeout 5000 tests/*_test.js"
+    "start": "node app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "http://github.com/openshift/nodejs-ex.git"
+  "jshintConfig": {
+    "bitwise": true,
+    "curly": true,
+    "camelcase": true,
+    "eqeqeq": true,
+    "freeze": true,
+    "immed": true,
+    "latedef": false,
+    "newcap": true,
+    "noarg": true,
+    "forin": true,
+    "sub": true,
+    "undef": true,
+    "unused": true,
+    "noempty": true,
+    "boss": false,
+    "eqnull": true,
+    "browser": true,
+    "indent": 4,
+    "maxcomplexity": 7,
+    "maxstatements": 36,
+    "maxparams": 5,
+    "maxdepth": 3,
+    "maxlen": 100,
+    "trailing": true,
+    "maxerr": 5,
+    "globals": {
+      "module": true,
+      "require": true,
+      "describe": true,
+      "it": true,
+      "expect": true,
+      "assert": true,
+      "chai": true,
+      "Buffer": true
+    }
   },
-  "author": "Steve Speicher <sspeiche@gmail.com>",
-  "license": "CC-BY-1.0",
-  "bugs": {
-    "url": "http://github.com/openshift/nodejs-ex/issues"
-  },
-  "homepage": "http://github.com/openshift/nodejs-ex"
+  "jscsConfig": {
+    "requireCurlyBraces": [
+      "if",
+      "else",
+      "for",
+      "while",
+      "do",
+      "try",
+      "catch"
+    ],
+    "requireSpaceAfterKeywords": [
+      "if",
+      "else",
+      "for",
+      "while",
+      "do",
+      "switch",
+      "return",
+      "try",
+      "catch"
+    ],
+    "disallowLeftStickedOperators": [
+      "?",
+      "/",
+      "*",
+      "=",
+      "==",
+      "===",
+      "!=",
+      "!==",
+      ">",
+      ">=",
+      "<",
+      "<="
+    ],
+    "disallowRightStickedOperators": [
+      "?",
+      "/",
+      "*",
+      ":",
+      "=",
+      "==",
+      "===",
+      "!=",
+      "!==",
+      ">",
+      ">=",
+      "<",
+      "<="
+    ],
+    "requireRightStickedOperators": [
+      "!"
+    ],
+    "requireLeftStickedOperators": [
+      ","
+    ],
+    "disallowImplicitTypeConversion": [
+      "string"
+    ],
+    "disallowKeywords": [
+      "with"
+    ],
+    "disallowMultipleLineBreaks": true,
+    "safeContextKeyword": "self",
+    "disallowKeywordsOnNewLine": [
+      "else"
+    ]
+  }
 }
