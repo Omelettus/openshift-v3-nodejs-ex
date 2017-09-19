@@ -27,6 +27,12 @@ if (mongoURL == null && process.env.DATABASE_SERVICE_NAME) {
       //mongoPassword = process.env[mongoServiceName + '_PASSWORD']
       //mongoUser = process.env[mongoServiceName + '_USER'];
 
+	  console.log(mongoHost);
+	  console.log(mongoPort);
+	  console.log(mongoDatabase);
+	  console.log(mongoUser);
+	  console.log(mongoPassword);
+	  
   if (mongoHost && mongoPort && mongoDatabase) {
     mongoURLLabel = mongoURL = 'mongodb://';
     if (mongoUser && mongoPassword) {
@@ -36,6 +42,10 @@ if (mongoURL == null && process.env.DATABASE_SERVICE_NAME) {
     mongoURLLabel += mongoHost + ':' + mongoPort + '/' + mongoDatabase;
     mongoURL += mongoHost + ':' +  mongoPort + '/' + mongoDatabase;
 
+	console.log('Label y url');
+	console.log(mongoURLLabel);
+	console.log(mongoURL);
+	
   }
 }
 var db = null,
