@@ -47,7 +47,7 @@ var mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL,
 console.log('mongoURL es');
 console.log(mongoURL);
 
-if (mongoURL === null && process.env.DATABASE_SERVICE_NAME) {
+if ((!mongoURL || mongoURL === null) && process.env.DATABASE_SERVICE_NAME) {
     console.log("Voy a darle un valor");
     var mongoServiceName = process.env.DATABASE_SERVICE_NAME.toUpperCase();
 
