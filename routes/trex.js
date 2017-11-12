@@ -9,7 +9,7 @@
  */
 
 // debug
-var DEBUG_MODE = true;
+/*var DEBUG_MODE = true;
 var consoleHolder = console;
 
 function debug(bool) {
@@ -26,7 +26,7 @@ function debug(bool) {
 }
 
 debug(DEBUG_MODE);
-
+*/
 var newpctUtils = require('../utils/newpct.js');
 
 var request = require('request'),
