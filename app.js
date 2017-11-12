@@ -9,7 +9,7 @@ var express = require('express'),
     server = http.createServer(app);
 
 var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
-    ip = process.env.IP || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
+    ip = process.env.IP || process.env.OPENSHIFT_NODEJS_IP || 'localhost';
 
 // Configuramos la app para que pueda realizar métodos REST
 app.configure(function () {
